@@ -18,8 +18,8 @@ jobs:
 
     - name: Set up the script to run
       run: |
-        chmod +x ./process-connect-dest.sh
+        chmod +x ./process-traffic.sh
     
     - name: Run the shell script
       run: |
-        ./process-connect-dest.sh
+        ./process-traffic.sh
