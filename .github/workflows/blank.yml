@@ -1,13 +1,22 @@
-name: Example Workflow
+name: Sensor Monitoring
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # `main` ブランチへのプッシュ時に実行
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  monitor:
+    runs-on: ubuntu-latest  # Ubuntu 上で実行
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo "Hello, GitHub Actions!"
+      - name: Set up environment
+        run: sudo apt-get install -y iproute2 procps net-tools
+
+      - name: Run Sensor Monitoring Script
+        run: |
+          chmod +x ./process-connect-dest.sh  # 実行権限を付与
+          ./process-connect-dest.sh
