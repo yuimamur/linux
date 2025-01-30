@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get install -y iproute2 procps net-tools  # 必要なツールをインストール
 
       - name: Make the script executable
-        run: chmod +x ./process-connect-dest.sh  # 実行権限を付与
+        run: chmod +x ./process-traffic.sh  # 実行権限を付与
 
       - name: Run the script
-        run: ./process-connect-dest.sh  # シェルスクリプトを実行
+        run: ./process-traffic.sh  # シェルスクリプトを実行
